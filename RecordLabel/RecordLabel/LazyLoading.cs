@@ -49,12 +49,10 @@ namespace RecordLabel
 
         public async Task FilterByBirth()
         {
-            var dateOfBirth = await _context.Artists.MaxAsync(a => a.DateOfBirth);
             var songs = await _context.Songs
-                .Where(s => s.ReleasedDate < dateOfBirth)
+                .Where(s => s.ReleasedDate < s.Artists.Max(a => a.DateOfBirth))
                 .ToListAsync();
 
-            Console.WriteLine($"{dateOfBirth}");
             foreach (var song in songs)
             {
                 Console.WriteLine($"{song.Title} - {song.ReleasedDate}");

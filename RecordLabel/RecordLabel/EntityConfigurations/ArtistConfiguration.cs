@@ -15,7 +15,7 @@ namespace RecordLabel.EntityConfigurations
             builder.Property(a => a.DateOfBirth).IsRequired().HasColumnName("DateOfBirth").HasColumnType("date");
             builder.Property(a => a.Phone).HasColumnName("Phone").HasMaxLength(30);
             builder.Property(a => a.Email).HasColumnName("Email").HasMaxLength(100);
-            builder.Property(a => a.InstagramUrl).HasColumnName("InstagramUrl");
+            builder.Property(a => a.InstagramUrl).HasColumnName("InstagramUrl").HasMaxLength(255);
 
             builder.HasMany(a => a.Songs)
                 .WithMany(s => s.Artists)

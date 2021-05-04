@@ -17,7 +17,7 @@ namespace RecordLabel.Migrations
                     DateOfBirth = table.Column<DateTime>(type: "date", nullable: false),
                     Phone = table.Column<string>(type: "nvarchar(30)", maxLength: 30, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
-                    InstagramUrl = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    InstagramUrl = table.Column<string>(type: "nvarchar(255)", nullable: true)
                 },
                 constraints: table =>
                 {

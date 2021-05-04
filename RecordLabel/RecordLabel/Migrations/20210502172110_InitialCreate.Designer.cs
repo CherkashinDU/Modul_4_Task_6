@@ -54,7 +54,7 @@ namespace RecordLabel.Migrations
                         .HasColumnName("Email");
 
                     b.Property<string>("InstagramUrl")
-                        .HasColumnType("nvarchar(max)")
+                        .HasColumnType("nvarchar(255)")
                         .HasColumnName("InstagramUrl");
 
                     b.Property<string>("Name")
